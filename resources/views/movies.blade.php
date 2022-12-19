@@ -15,22 +15,23 @@
 
 </head>
 
-<body>
+<body class='bg-dark'>
 
-    <div class="container">
-        <div class="row row-cols-5 g-5">
+    <div class="container py-5 ">
+
+        @include('partials.header')
+
+        <div class="row row-cols-5 gy-5">
             @foreach ($movies as $movie)
             <div class="col">
-                <div class="card">
+                <div class="card text-center h-100 border-none">
                     <img class="card-img-top" src="https://picsum.photos/200" alt="">
                     <div class="card-body">
-                        <h3>
-                            {{$movie->title}}
-                        </h3>
+                        <h3 class="mb-3">{{$movie->title}}</h3>
                         <div class="card-text">
-                            <p>{{$movie->nationality}}</p>
-                            <p>{{$movie->date}}</p>
-                            <p>{{$movie->vote}}</p>
+                            <p><span class="fw-bold">Paese di produzione:</span> {{$movie->nationality}}</p>
+                            <p><span class="fw-bold">Data di uscita: </span>{{$movie->date}}</p>
+                            <p><span class="fw-bold">Voto: </span>{{$movie->vote}}</p>
                         </div>
                     </div>
                 </div>
